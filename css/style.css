@@ -1,0 +1,428 @@
+/*
+   GLOBAL / RESET
+   */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+h1, h2, h3 {
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/*
+   UTILITY CLASSES
+   */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.text-primary {
+  color: #f4a652;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 30px;
+  background: #f4a652;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #e09438;
+}
+
+.section-title {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/*
+   NAVBAR
+   */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #333;
+  color: #fff;
+  padding: 20px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+#navbar .logo a {
+  color: #f4a652;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#navbar ul {
+  display: flex;
+  gap: 20px;
+}
+
+#navbar ul li a {
+  color: #fff;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+#navbar ul li a:hover,
+#navbar ul li a.current {
+  background: #f4a652;
+  color: #fff;
+}
+
+/*
+   SHOWCASE (HERO) — index
+   */
+#showcase {
+  background: #333 url('../images/showcaseBg') center/cover no-repeat;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+#showcase-content {
+  max-width: 550px;
+}
+
+#showcase-content h1 {
+  font-size: 40px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+#showcase-content p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+/* 
+   HOME INFO (ABOUT STRIP)
+  */
+#home-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 400px;
+}
+
+.info-img {
+  background: url('../images/infoBg') center/cover no-repeat;
+}
+
+.info-content {
+  background: #f4a652;
+  color: #fff;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.info-content h2 {
+  font-size: 30px;
+}
+
+.info-content h2 span {
+  color: #333;
+}
+
+.info-content p {
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+.info-content .btn {
+  background: #333;
+  width: fit-content;
+}
+
+.info-content .btn:hover {
+  background: #555;
+}
+
+/*
+   HOME SERVICES
+   */
+#home-services {
+  padding: 60px 0;
+  background: #f4f4f4;
+}
+
+/*
+   SERVICES PAGE
+   */
+#services {
+  padding: 60px 0;
+}
+
+/* Shared grid for both home + services page */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card i {
+  font-size: 40px;
+  color: #f4a652;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #666;
+}
+
+/*
+   WORK PAGE
+   */
+#work {
+  padding: 60px 0;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.work-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.work-item img {
+  display: block;
+  transition: transform 0.4s ease;
+  object-fit: cover;
+  width:100%;
+  height:100%;
+}
+
+.work-item:hover img {
+  transform: scale(1.05);
+}
+
+.work-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(244, 166, 82, 0.85);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.work-item:hover .work-overlay {
+  opacity: 1;
+}
+
+.work-overlay h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.work-overlay p {
+  font-size: 14px;
+}
+
+/*
+   CONTACT PAGE
+   */
+#contact {
+  padding: 60px 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+.contact-grid h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #f4a652;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #f4a652;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-info {
+  font-size: 15px;
+  line-height: 2;
+}
+
+.contact-info li {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.contact-info i {
+  color: #f4a652;
+  margin-right: 8px;
+}
+
+/*
+   PAGE HEADER (inner pages)
+   */
+#page-header {
+  background: #333;
+  color: #fff;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+#page-header h1 {
+  font-size: 34px;
+}
+
+#page-header p {
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/*
+   FOOTER
+   */
+#main-footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/*
+   RESPONSIVE
+   */
+@media (max-width: 768px) {
+  #navbar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  #showcase-content h1 {
+    font-size: 28px;
+  }
+
+  #home-info {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .info-img {
+    height: 250px;
+  }
+
+  .services-grid,
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .services-grid,
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+}
